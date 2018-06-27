@@ -21,13 +21,9 @@ Prerequisites: [Node.js](https://nodejs.org/) 6+, **npm** 3+.
 Usage
 -----
 
-### ES5
-
-    var xxx = require('hiplog').default;
-
-### ES2015+
-
-    import xxx from 'hiplog';
+```
+const xxx = require('hiplog');
+```
 
 Contributing
 ------------
