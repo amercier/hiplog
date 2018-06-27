@@ -132,7 +132,7 @@ Please refer to the [guidelines for contributing](./CONTRIBUTING.md).
 License
 -------
 
-[![License](https://img.shields.io/npm/l/package-skeleton.svg)](LICENSE.md)
+[![License](https://img.shields.io/npm/l/package-skeleton.svg)](LICENSE.md) [![Greenkeeper badge](https://badges.greenkeeper.io/amercier/hiplog.svg)](https://greenkeeper.io/)
 
 ---
 <sup>_Created with [npm-p&#97;ckage-skeleton](https://github.com/&#97;mercier/npm-p&#97;ckage-skeleton)._</sup>
