@@ -1,4 +1,4 @@
-npm-package-skeleton
+hiplog
 ====================
 
 Skeleton of a simple NPM Package with Babel and CI already configured.
@@ -29,7 +29,7 @@ Skeleton of a simple NPM Package with Babel and CI already configured.
     ```sh
     mkdir my-project && cd my-project
     git init
-    git remote add skeleton https://github.com/amercier/npm-package-skeleton.git
+    git remote add skeleton https://github.com/amercier/hiplog.git
     git remote set-url skeleton --push "Error: skeleton remote is read-only"
     git remote add origin <YOUR GIT REPOSITORY URL>
     git pull skeleton master
@@ -40,7 +40,7 @@ Skeleton of a simple NPM Package with Babel and CI already configured.
     **Warning:** this will erase all existing code and git
     history on master branch, use `git reflog` if you ever need to rollback.
     ```sh
-    git remote add skeleton https://github.com/amercier/npm-package-skeleton.git
+    git remote add skeleton https://github.com/amercier/hiplog.git
     git remote set-url skeleton --push "Error: skeleton remote is read-only"
     git show-ref --verify --quiet refs/heads/master || git branch master # Create master branch if needed
     [[ refs/heads/master == $(git symbolic-ref --quiet HEAD) ]] || git checkout master # Switch to master branch
@@ -51,9 +51,9 @@ Skeleton of a simple NPM Package with Babel and CI already configured.
 2. Set initial version (ex: `0.1.0`) in `package.json`
 
 3. Replace the following occurrences
-  - [ ] `amercier/npm-package-skeleton` → *your repo slug*
-  - [ ] `npm-package-skeleton` → *your project name*
-  - [ ] `package-skeleton` → *your NPM package name*
+  - [ ] `amercier/hiplog` → *your repo slug*
+  - [ ] `hiplog` → *your project name*
+  - [ ] `hiplog` → *your NPM package name*
   - [ ] `Alex Mercier` → *your name*
   - [ ] `pro.alexandre.mercier@gmail.com` → *your public email address*
   - [ ] `http://amercier.com` → *your website*
@@ -93,46 +93,46 @@ This project is released under [ISC License](LICENSE.md).
 ---
 ## **Note:** the content after this is the actual package documentation (to be edited after cloning).
 
-npm-package-skeleton
+hiplog
 ====================
 
-[![Latest Stable Version](https://img.shields.io/npm/v/package-skeleton.svg)](https://www.npmjs.com/package/package-skeleton)
-[![Build Status](https://img.shields.io/travis/amercier/npm-package-skeleton/master.svg)](https://travis-ci.org/amercier/npm-package-skeleton)
-[![NPM Downloads](https://img.shields.io/npm/dm/package-skeleton.svg)](https://www.npmjs.com/package/package-skeleton)
+[![Latest Stable Version](https://img.shields.io/npm/v/hiplog.svg)](https://www.npmjs.com/package/hiplog)
+[![Build Status](https://img.shields.io/travis/amercier/hiplog/master.svg)](https://travis-ci.org/amercier/hiplog)
+[![NPM Downloads](https://img.shields.io/npm/dm/hiplog.svg)](https://www.npmjs.com/package/hiplog)
 
-[![Dependency Status](https://img.shields.io/david/amercier/npm-package-skeleton.svg)](https://david-dm.org/amercier/npm-package-skeleton)
-[![Test Coverage](https://img.shields.io/codecov/c/github/amercier/npm-package-skeleton/master.svg)](https://codecov.io/github/amercier/npm-package-skeleton?branch=master)
-[![API Documentation](https://doc.esdoc.org/github.com/amercier/npm-package-skeleton/badge.svg)](https://doc.esdoc.org/github.com/amercier/npm-package-skeleton/)
+[![Dependency Status](https://img.shields.io/david/amercier/hiplog.svg)](https://david-dm.org/amercier/hiplog)
+[![Test Coverage](https://img.shields.io/codecov/c/github/amercier/hiplog/master.svg)](https://codecov.io/github/amercier/hiplog?branch=master)
+[![API Documentation](https://doc.esdoc.org/github.com/amercier/hiplog/badge.svg)](https://doc.esdoc.org/github.com/amercier/hiplog/)
 
 Installation
 ------------
 
 Prerequisites: [Node.js](https://nodejs.org/) 6+, **npm** 3+.
 
-    npm install --save package-skeleton
+    npm install --save hiplog
 
 Usage
 -----
 
 ### ES5
 
-    var xxx = require('package-skeleton').default;
+    var xxx = require('hiplog').default;
 
 ### ES2015+
 
-    import xxx from 'package-skeleton';
+    import xxx from 'hiplog';
 
 Contributing
 ------------
 
 Please refer to the [guidelines for contributing](./CONTRIBUTING.md).
 
-[![devDependency Status](https://img.shields.io/david/dev/amercier/npm-package-skeleton.svg)](https://david-dm.org/amercier/npm-package-skeleton#info=devDependencies)
+[![devDependency Status](https://img.shields.io/david/dev/amercier/hiplog.svg)](https://david-dm.org/amercier/hiplog#info=devDependencies)
 
 License
 -------
 
-[![License](https://img.shields.io/npm/l/package-skeleton.svg)](LICENSE.md)
+[![License](https://img.shields.io/npm/l/hiplog.svg)](LICENSE.md)
 
 ---
 <sup>_Created with [npm-p&#97;ckage-skeleton](https://github.com/&#97;mercier/npm-p&#97;ckage-skeleton)._</sup>

@@ -4,9 +4,9 @@ Contributing
 Issues
 ------
 
-Feel free to [open an issue](https://github.com/amercier/npm-package-skeleton/issues/new),
-or propose a [pull request](https://github.com/amercier/npm-package-skeleton/pulls).
-To prevent duplication, please look at [existing issues](https://github.com/amercier/npm-package-skeleton/issues?q=is%3Aissue) before posting a new one.
+Feel free to [open an issue](https://github.com/amercier/hiplog/issues/new),
+or propose a [pull request](https://github.com/amercier/hiplog/pulls).
+To prevent duplication, please look at [existing issues](https://github.com/amercier/hiplog/issues?q=is%3Aissue) before posting a new one.
 
 TL;DR
 -----
@@ -25,7 +25,7 @@ Getting started
 _**Prerequisites:** you need to have `git`, `node` (>=6) and `npm` installed_.
 
 ```bash
-git clone https://github.com/amercier/npm-package-skeleton.git
+git clone https://github.com/amercier/hiplog.git
 ```
 
 _(or your clone's Git URL)_
@@ -43,7 +43,7 @@ npm test
 ```
 
 ```log
-> package-skeleton@1.0.4 test ./npm-package-skeleton
+> hiplog@1.0.4 test ./hiplog
 > jest
 
  PASS  specs/lib/index.spec.js
