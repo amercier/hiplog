@@ -21,7 +21,7 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: amercier/npm-package-skeleton # Prevents publishing on PRs
+    repo: amercier/hiplog # Prevents publishing on PRs
     condition: $NPM_DEPLOY = true # Prevents publishing on each matrix build
 cache:
   directories:

@@ -1,9 +1,9 @@
 {
-  "name": "package-skeleton",
-  "version": "1.0.5",
-  "description": "Skeleton of a simple NPM Package with Babel and CI already configured.",
+  "name": "hiplog",
+  "version": "0.1.0-alpha.1",
+  "description": "Fancy lightweight logging utility.",
   "license": "ISC",
-  "repository": "amercier/npm-package-skeleton",
+  "repository": "amercier/hiplog",
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
   "engines": {
     "node": ">=6",
@@ -27,24 +27,23 @@
   ],
   "main": "dist/index.js",
   "keywords": [
-    "package",
-    "skeleton",
-    "example",
-    "node",
-    "npm",
-    "babel",
-    "ci",
-    "code",
-    "codecov",
-    "coverage",
-    "eslint",
-    "gemnasium",
-    "jest"
+    "log",
+    "logging",
+    "logger",
+    "pretty",
+    "fancy",
+    "beautiful",
+    "display",
+    "error",
+    "stack",
+    "trace",
+    "object"
   ],
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-istanbul": "^4.1.6",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
@@ -74,10 +73,14 @@
         }
       ]
     ],
+    "plugins": [
+      "add-module-exports"
+    ],
     "env": {
       "test": {
         "plugins": [
           [
+            "add-module-exports",
             "istanbul",
             {
               "exclude": "specs/**"
