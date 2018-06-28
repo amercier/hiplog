@@ -1,5 +1,10 @@
-hiplog
-======
+<h1 align="center">
+  <img
+    alt="hiplog"
+    src="https://amercier.github.io/hiplog/dist/header.svg"
+    width="300"
+  />
+</h1>
 
 > Pretty lightweight logging utility for Node.js
 
