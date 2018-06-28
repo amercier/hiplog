@@ -12,7 +12,7 @@
 [![Build Status](https://travis-ci.org/amercier/hiplog.svg?branch=master)](https://travis-ci.org/amercier/hiplog)
 [![NPM Downloads](https://img.shields.io/npm/dm/hiplog.svg)](https://www.npmjs.com/package/hiplog)
 
-[![Dependency Status](https://img.shields.io/david/amercier/hiplog.svg)](https://david-dm.org/amercier/hiplog)
+[![dependencies Status](https://david-dm.org/amercier/hiplog/status.svg)](https://david-dm.org/amercier/hiplog)
 [![Test Coverage](https://img.shields.io/codecov/c/github/amercier/hiplog/master.svg)](https://codecov.io/github/amercier/hiplog?branch=master)
 [![API Documentation](https://doc.esdoc.org/github.com/amercier/hiplog/badge.svg)](https://doc.esdoc.org/github.com/amercier/hiplog/)
 
@@ -35,7 +35,7 @@ Contributing
 
 Please refer to the [guidelines for contributing](./CONTRIBUTING.md).
 
-[![devDependency Status](https://img.shields.io/david/dev/amercier/hiplog.svg)](https://david-dm.org/amercier/hiplog#info=devDependencies)
+[![devDependencies Status](https://david-dm.org/amercier/hiplog/dev-status.svg)](https://david-dm.org/amercier/hiplog?type=dev)
 
 License
 -------
