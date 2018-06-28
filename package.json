@@ -1,7 +1,7 @@
 {
   "name": "hiplog",
   "version": "0.1.0-alpha.1",
-  "description": "Pretty lightweight logging utility.",
+  "description": "Fancy lightweight logging utility.",
   "license": "ISC",
   "repository": "amercier/hiplog",
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",

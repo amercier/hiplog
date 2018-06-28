@@ -6,7 +6,7 @@
   />
 </h1>
 
-> Pretty lightweight logging utility for Node.js
+> Fancy lightweight logging utility for Node.js
 
 [![Latest Stable Version](https://img.shields.io/npm/v/hiplog.svg)](https://www.npmjs.com/package/hiplog)
 [![Build Status](https://travis-ci.org/amercier/hiplog.svg?branch=master)](https://travis-ci.org/amercier/hiplog)
