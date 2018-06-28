@@ -4,7 +4,7 @@ hiplog
 > Pretty lightweight logging utility for Node.js
 
 [![Latest Stable Version](https://img.shields.io/npm/v/hiplog.svg)](https://www.npmjs.com/package/hiplog)
-[![Build Status](https://img.shields.io/travis/amercier/hiplog/master.svg)](https://travis-ci.org/amercier/hiplog)
+[![Build Status](https://travis-ci.org/amercier/hiplog.svg?branch=master)](https://travis-ci.org/amercier/hiplog)
 [![NPM Downloads](https://img.shields.io/npm/dm/hiplog.svg)](https://www.npmjs.com/package/hiplog)
 
 [![Dependency Status](https://img.shields.io/david/amercier/hiplog.svg)](https://david-dm.org/amercier/hiplog)
