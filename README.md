@@ -83,9 +83,44 @@ try {
 } catch (e) {
   log.error(e);
 }
-``````
+```
 
 ![Hiplog errors output][doc-img-error]
+
+### Options
+
+#### `level`
+
+- type: `string`
+- default value: `'info'`
+
+Minimum level to display. All messages below this level will be ignored.
+
+#### `stream`
+
+- type: `Steam | function: integer -> Stream`
+- default value:
+  ```js
+  level => (level <= 4 ? process.stderr : process.stdout)
+  ```
+
+Stream to write to.
+
+#### `displayTime`
+
+- type: `boolean`
+- default value: `false`
+
+Whether to display time information or not. Example:
+
+![Hiplog time output][doc-img-time]
+
+#### `format`
+
+- type: `function: string -> string`
+- default value: `hiplog.format`
+
+Message formatter function.
 
 Contributing
 ------------
@@ -106,4 +141,5 @@ License
 [doc-img-object-small]: ./media/img/doc/object-small.png
 [doc-img-object-big]: ./media/img/doc/object-big.png
 [doc-img-error]: ./media/img/doc/error.png
+[doc-img-time]: ./media/img/doc/time.png
 [Purdy]: https://www.npmjs.com/package/purdy
