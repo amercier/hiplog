@@ -75,7 +75,7 @@ log.info('a bigger object', {
 
 ### Errors
 
-Errors are displayed using
+Errors are displayed using [jest-message-util] (powered by :sparkles: [babel-code-frame] :sparkles:):
 
 ```js
 try {
@@ -143,3 +143,5 @@ License
 [doc-img-error]: ./media/img/doc/error.png
 [doc-img-time]: ./media/img/doc/time.png
 [Purdy]: https://www.npmjs.com/package/purdy
+[babel-code-frame]: https://new.babeljs.io/docs/en/next/babel-code-frame.html
+[jest-message-util]: https://github.com/facebook/jest/tree/master/packages/jest-message-util
