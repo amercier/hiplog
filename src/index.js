@@ -16,7 +16,7 @@ export function formatError(error) {
     { rootDir: dirname(dirname(__dirname)), testMatch: [] },
     { noStackTrace: false },
   );
-  return `${red(message)}\n${stackTrace.replace(/\n */g, '\n')}\n`;
+  return `${red(message)}\n${stackTrace.replace(/\n {4}/g, '\n')}\n`;
 }
 
 function formatObject(object) {
@@ -95,4 +95,17 @@ export function configFromEnvironment(
 
 export function fromEnvironment(...args) {
   return new Log(configFromEnvironment(...args));
+}
+
+export function fromEnvironmentVariables(
+  environment = process.env.NODE_ENV,
+  level = process.env.LOG || process.env.LOG_LEVEL,
+  displayTime = process.env.LOG_TIME,
+) {
+  return new Log(Object.assign(
+    { },
+    configFromEnvironment(environment),
+    level ? { level } : {},
+    { displayTime: ['1', 'true'].indexOf(displayTime) !== -1 },
+  ));
 }
