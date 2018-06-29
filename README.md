@@ -28,7 +28,7 @@ Usage
 
 ```js
 const { Log } = require('hiplog');
-const log = new Log(/* { ... } */);
+const log = new Log({ level: 'debug' });
 ```
 
 ```js
