@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build:clean": "rimraf img",
+    "build:copy": "cpy --parents --cwd=src/ **/*.png ../img/",
+    "build:generate": "sketchtool export slices --output=img/ hiplog.sketch",
+    "build:optimize:png": "optipng -o2 -strip all img/*.png",
+    "build:optimize:svg": "svgo -f img/",
+    "build:optimize": "run-p build:optimize:*",
+    "build": "run-s build:*"
+  },
+  "devDependencies": {
+    "cpy-cli": "^2.0.0",
+    "npm-run-all": "^4.1.3",
+    "optipng": "^1.1.0",
+    "rimraf": "^2.6.2",
+    "svgo": "^1.0.5"
+  }
+}
