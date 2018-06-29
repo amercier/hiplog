@@ -1,7 +1,7 @@
 <h1 align="center">
   <img
     alt="hiplog"
-    src="https://amercier.github.io/hiplog/dist/header.svg"
+    src="./media/img/header.svg"
     width="300"
   />
 </h1>
@@ -26,13 +26,66 @@ Prerequisites: [Node.js](https://nodejs.org/) 6+, **npm** 3+.
 Usage
 -----
 
-### ES5
+```js
+const { Log } = require('hiplog');
+const log = new Log(/* { ... } */);
+```
 
-    var xxx = require('hiplog').default;
+```js
+log.debug('messages to debug an application');
+log.info('a purely informational message');
+log.notice('a normal but significant condition');
+log.warning('warning condition');
+log.error('error condition');
+log.critical('the system is in critical condition');
+log.alert('action must be taken immediately');
+log.emergency('system is unusable');
+```
 
-### ES2015+
+![Hiplog levels output][doc-img-levels]
 
-    import xxx from 'hiplog';
+### Objects
+
+Objects are automatically stringified using [Purdy]. Small objects (< 200
+characters) are inlined.
+
+```js
+log.info('a small object:', { int: 123, bool: true, str: 'Hello' });
+```
+
+![Hiplog small objects output][doc-img-object-small]
+
+```js
+const circular = {};
+circular.inner = circular;
+
+log.info('a bigger object', {
+  null: null,
+  undefined,
+  integer: 123,
+  boolean: true,
+  string: 'Hello',
+  funtion: function myFunction() {},
+  circular,
+  array: ['one', 'two', 'three', 'four'],
+});
+```
+
+![Hiplog big objects output][doc-img-object-big]
+
+### Errors
+
+Errors are displayed using
+
+```js
+try {
+  throw new Error('Error example');
+} catch (e) {
+  log.error(e);
+}
+``````
+
+![Hiplog errors output][doc-img-error]
 
 Contributing
 ------------
@@ -48,3 +101,9 @@ License
 
 ---
 <sup>_Created with [npm-package-skeleton](https://github.com/amercier/npm-package-skeleton)._</sup>
+
+[doc-img-levels]: ./media/img/doc/levels.png
+[doc-img-object-small]: ./media/img/doc/object-small.png
+[doc-img-object-big]: ./media/img/doc/object-big.png
+[doc-img-error]: ./media/img/doc/error.png
+[Purdy]: https://www.npmjs.com/package/purdy
