@@ -1,12 +1,8 @@
-import myModule from '.';
+import { Log } from '.';
 
-/** @test {myModule} */
-describe('myModule', () => {
+/** @test {Log} */
+describe('Log', () => {
   it('exists', () => {
-    expect(myModule).toBeDefined();
-  });
-
-  it('returns true', () => {
-    expect(myModule()).toBe(true);
+    expect(Log).toBeDefined();
   });
 });
