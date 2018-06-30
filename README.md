@@ -1,8 +1,8 @@
 <h1 align="center">
   <img
     alt="hiplog"
-    src="./media/img/header.svg"
-    width="300"
+    src="./media/img/header-512.png"
+    width="256"
   />
 </h1>
 
