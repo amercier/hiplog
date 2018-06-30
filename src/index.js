@@ -44,6 +44,8 @@ export const defaultConfig = {
   level: 'info',
 };
 
+const getStream = (level, { stream }) => (typeof stream === 'function' ? stream(level) : stream);
+
 export class Log {
   constructor(options = {}) {
     // Options
@@ -52,23 +54,35 @@ export class Log {
 
     // Level methods
     this.levels.forEach((name, logLevel) => {
-      this[name] = (...args) => this.print(logLevel, ...args);
+      this[name] = (...parts) => this.write(logLevel, parts);
     });
   }
 
-  print(level, ...args) {
-    if (level <= this.levelValue) {
-      const time = this.displayTime ? dateFormat(Date.now(), this.displayTimeFormat) : '';
-      const color = this.colors[level];
-      const labelColor = this.inverse[level] ? color.inverse : color;
-      const label = `${this.labels[level]}`;
-      const messages = args.map(this.format);
-      const message = messages.join(messages.some(s => s.includes('\n')) ? '\n' : ' ');
-      const stream = typeof this.stream === 'function' ? this.stream(level) : this.stream;
-      const { separator } = this;
-      const header = `${time && grey(`${time} ${separator}`)} ${labelColor(label)} ${color(separator)} `;
-      stream.write(`${header}${indent(message, stripAnsi(header).length)}\n`);
+  buildHeader(level) {
+    const time = this.displayTime ? dateFormat(Date.now(), this.displayTimeFormat) : '';
+    const color = this.colors[level];
+    const labelColor = this.inverse[level] ? color.inverse : color;
+    const label = `${this.labels[level]}`;
+    const { separator } = this;
+    return `${time && grey(`${time} ${separator}`)} ${labelColor(label)} ${color(separator)} `;
+  }
+
+  buildBody(parts) {
+    const messages = parts.map(this.format);
+    return messages.join(messages.some(s => s.includes('\n')) ? '\n' : ' ');
+  }
+
+  buildMessage(level, parts) {
+    const header = this.buildHeader(level);
+    const body = this.buildBody(parts);
+    return `${header}${indent(body, stripAnsi(header).length)}\n`;
+  }
+
+  write(level, parts) {
+    if (level > this.levelValue) {
+      return;
     }
+    getStream(level, this).write(this.buildMessage(level, parts));
   }
 }
 
