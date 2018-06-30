@@ -3,7 +3,10 @@
   "version": "0.1.0-alpha.2",
   "description": "Fancy lightweight logging utility.",
   "license": "ISC",
-  "repository": "amercier/hiplog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amercier/hiplog"
+  },
   "author": "Alex Mercier <pro.alexandre.mercier@gmail.com> (http://amercier.com)",
   "engines": {
     "node": ">=6",
