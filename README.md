@@ -115,6 +115,14 @@ Whether to display time information or not. Example:
 
 ![Hiplog time output][doc-img-time]
 
+### `displayTimeFormat`
+
+- type: `string`
+- default value: `'yyyy-mm-dd HH:MM:ss.l'`
+
+Date format to display time in, when `displayTime` is set to `true`. See [dateformat]
+for possible values.
+
 #### `format`
 
 - type: `function: string -> string`
@@ -145,3 +153,4 @@ License
 [Purdy]: https://www.npmjs.com/package/purdy
 [babel-code-frame]: https://new.babeljs.io/docs/en/next/babel-code-frame.html
 [jest-message-util]: https://github.com/facebook/jest/tree/master/packages/jest-message-util
+[dateformat]: https://www.npmjs.com/package/dateformat

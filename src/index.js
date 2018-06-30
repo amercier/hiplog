@@ -1,5 +1,5 @@
 import {
-  red, yellow, magenta, blue, grey, bold,
+  red, yellow, magenta, blue, grey,
 } from 'chalk';
 import dateFormat from 'dateformat';
 import { separateMessageFromStack, formatStackTrace } from 'jest-message-util';
@@ -24,17 +24,11 @@ function formatObject(object) {
   return grey(stripAnsi(str).length < 200 ? str.replace(/\n */g, ' ') : `\n${str}\n`);
 }
 
-export function format(value) {
+function format(value) {
   if (value instanceof Error) {
     return formatError(value);
   }
-  switch (typeof value) {
-    case 'object': return formatObject(value);
-    case 'string': return value;
-    case 'null': return bold(value);
-    case 'undefined': return grey(value);
-    default: return yellow(value);
-  }
+  return typeof value === 'string' ? value : formatObject(value);
 }
 
 export const defaultConfig = {
@@ -46,6 +40,7 @@ export const defaultConfig = {
   stream: level => (level <= 4 ? process.stderr : process.stdout),
   format,
   displayTime: true,
+  displayTimeFormat: 'yyyy-mm-dd HH:MM:ss.l',
   level: 'info',
 };
 
@@ -63,7 +58,7 @@ export class Log {
 
   print(level, ...args) {
     if (level <= this.levelValue) {
-      const time = this.displayTime ? dateFormat(Date.now(), 'yyyy-mm-dd HH:MM:ss.l') : '';
+      const time = this.displayTime ? dateFormat(Date.now(), this.displayTimeFormat) : '';
       const color = this.colors[level];
       const labelColor = this.inverse[level] ? color.inverse : color;
       const label = `${this.labels[level]}`;
