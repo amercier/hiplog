@@ -36,7 +36,7 @@ export const defaultConfig = {
   colors: [red.bold, red, red.bold, red, magenta, yellow, blue, grey],
   inverse: [true, true],
   labels: ['EMERG', 'ALERT', 'CRITI', 'ERROR', ' WARN', ' NOTE', ' INFO', 'DEBUG'],
-  separator: '•',
+  separator: ' • ',
   stream: level => (level <= 4 ? process.stderr : process.stdout),
   format,
   displayTime: true,
@@ -48,27 +48,29 @@ const getStream = (level, { stream }) => (typeof stream === 'function' ? stream(
 
 export class Log {
   constructor(options = {}) {
-    // Options
-    Object.assign(this, defaultConfig, options);
-    this.levelValue = this.levels.indexOf(this.level);
-
-    // Level methods
-    this.levels.forEach((name, logLevel) => {
+    this.options = Object.assign({}, defaultConfig, options);
+    this.options.levels.forEach((name, logLevel) => {
       this[name] = (...parts) => this.write(logLevel, parts);
     });
   }
 
+  get level() {
+    return this.options.levels.indexOf(this.options.level);
+  }
+
   buildHeader(level) {
-    const time = this.displayTime ? dateFormat(Date.now(), this.displayTimeFormat) : '';
-    const color = this.colors[level];
-    const labelColor = this.inverse[level] ? color.inverse : color;
-    const label = `${this.labels[level]}`;
-    const { separator } = this;
-    return `${time && grey(`${time} ${separator}`)} ${labelColor(label)} ${color(separator)} `;
+    const {
+      labels, colors, inverse, displayTime, displayTimeFormat, separator,
+    } = this.options;
+    const time = displayTime ? grey(dateFormat(Date.now(), displayTimeFormat)) : '';
+    const color = colors[level];
+    const labelColor = inverse[level] ? color.inverse : color;
+    const label = `${labels[level]}`;
+    return `${time && grey(`${time}${separator}`)}${labelColor(label)}${color(separator)}`;
   }
 
   buildBody(parts) {
-    const messages = parts.map(this.format);
+    const messages = parts.map(this.options.format);
     return messages.join(messages.some(s => s.includes('\n')) ? '\n' : ' ');
   }
 
@@ -79,10 +81,10 @@ export class Log {
   }
 
   write(level, parts) {
-    if (level > this.levelValue) {
+    if (level > this.level) {
       return;
     }
-    getStream(level, this).write(this.buildMessage(level, parts));
+    getStream(level, this.options).write(this.buildMessage(level, parts));
   }
 }
 
