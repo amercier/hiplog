@@ -115,13 +115,21 @@ Whether to display time information or not. Example:
 
 ![Hiplog time output][doc-img-time]
 
-### `displayTimeFormat`
+#### `displayTimeFormat`
 
 - type: `string`
 - default value: `'yyyy-mm-dd HH:MM:ss.l'`
 
 Date format to display time in, when `displayTime` is set to `true`. See [dateformat]
 for possible values.
+
+#### `separator`
+
+- type: `string`
+- default value: `' • '`
+
+Separator between message header and body, and also between time and and label,
+when `displayTime` is set to `true`;
 
 #### `format`
 
