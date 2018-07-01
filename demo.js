@@ -31,6 +31,18 @@ log.alert('action must be taken immediately');
 log.emergency('system is unusable');
 process.stdout.write('\n');
 
+// Values
+[
+  ['boolean:', true, false],
+  ['null:', null],
+  ['undefined:', undefined],
+  ['number:', 1, 2, 3],
+  ['regexp:', /foo/],
+  ['array:', ['foo', 'bar']],
+  ['object:', { foo: 'bar' }],
+].forEach(parts => log.info(...parts));
+process.stdout.write('\n');
+
 // Objects
 
 log.info('a small object:', { int: 123, bool: true, str: 'Hello' });
