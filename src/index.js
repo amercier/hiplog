@@ -31,7 +31,7 @@ function format(value) {
   return typeof value === 'string' ? value : formatObject(value);
 }
 
-export const defaultConfig = {
+export const defaultOptions = {
   levels: ['emergency', 'alert', 'critical', 'error', 'warning', 'notice', 'info', 'debug'],
   colors: [red.bold, red, red.bold, red, magenta, yellow, blue, grey],
   inverse: [true, true],
@@ -48,7 +48,7 @@ const getStream = (level, { stream }) => (typeof stream === 'function' ? stream(
 
 export class Log {
   constructor(options = {}) {
-    this.options = Object.assign({}, defaultConfig, options);
+    this.options = Object.assign({}, defaultOptions, options);
     this.options.levels.forEach((name, logLevel) => {
       this[name] = (...parts) => this.write(logLevel, parts);
     });
