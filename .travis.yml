@@ -11,7 +11,7 @@ install:
 before_script:
   - npm run lint
 script:
-  - npm test -- --coverage
+  - FORCE_COLOR=1 npm test -- --coverage # TODO find a cleaner way to enable Chalk colors
   - '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
   - '[[ "$REPORT_COVERAGE" != true ]] || codecov'
 deploy:

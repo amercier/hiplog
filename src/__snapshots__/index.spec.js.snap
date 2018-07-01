@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Log buildMessage builds messages with big objects 1`] = `
+"[34m INFO[39m[34m • [39m[90m[39m
+        [90m{[39m
+        [90m  [1m[37mnull[90m[22m: [1m[31mnull[90m[22m,[39m
+        [90m  [1m[37mundefined[90m[22m: [7m[31mundefined[90m[27m,[39m
+        [90m  [1m[37minteger[90m[22m: [1m[34m123[90m[22m,[39m
+        [90m  [1m[37mboolean[90m[22m: [1m[32mtrue[90m[22m,[39m
+        [90m  [1m[37mstring[90m[22m: [33m'Hello'[90m,[39m
+        [90m  [1m[37mfuntion[90m[22m: [36m[Function: myFunction][90m,[39m
+        [90m  [1m[37mcircular[90m[22m: {[39m
+        [90m    [1m[37minner[90m[22m: [1m[90m[Circular~ circular][90m[22m[39m
+        [90m  },[39m
+        [90m  [1m[37marray[90m[22m: [[39m
+        [90m    [33m'one'[90m,[39m
+        [90m    [33m'two'[90m,[39m
+        [90m    [33m'three'[90m,[39m
+        [90m    [33m'four'[90m[39m
+        [90m  ][39m
+        [90m}[39m
+        [90m[39m
+"
+`;
+
+exports[`Log buildMessage builds messages with errors 1`] = `
+"[31mERROR[39m[31m • [39m[31mLEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!![39m
+        
+        [0m [90m 148 | [39m      let error[33m;[39m[0m
+        [0m [90m 149 | [39m      [36mtry[39m {[0m
+        [0m[31m[1m>[22m[39m[90m 150 | [39m        [36mthrow[39m [36mnew[39m [33mError[39m([32m'LEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!!'[39m)[33m;[39m[0m
+        [0m [90m     | [39m              [31m[1m^[22m[39m[0m
+        [0m [90m 151 | [39m      } [36mcatch[39m (e) {[0m
+        [0m [90m 152 | [39m        error [33m=[39m e[33m;[39m[0m
+        [0m [90m 153 | [39m      }[0m
+        
+          [2mat Object.<anonymous> ([22mhiplog/src/index.spec.js[2m:150:15)[22m
+        
+"
+`;
+
+exports[`Log buildMessage builds messages with multiple parts 1`] = `
+Array [
+  "[90mDEBUG[39m[90m • [39mmessages to debug an application
+",
+  "[34m INFO[39m[34m • [39ma purely informational message
+",
+  "[33m NOTE[39m[33m • [39ma normal but significant condition
+",
+  "[35m WARN[39m[35m • [39mwarning condition
+",
+  "[31mERROR[39m[31m • [39merror condition
+",
+  "[31m[1mCRITI[22m[39m[31m[1m • [22m[39mthe system is in critical condition
+",
+  "[31m[7mALERT[27m[39m[31m • [39maction must be taken immediately
+",
+  "[31m[1m[7mEMERG[27m[22m[39m[31m[1m • [22m[39msystem is unusable
+",
+]
+`;
+
+exports[`Log buildMessage builds messages with non-string parts 1`] = `
+Array [
+  "[34m INFO[39m[34m • [39mboolean: [90m[1m[32mtrue[90m[22m[39m [90m[1m[31mfalse[90m[22m[39m
+",
+  "[34m INFO[39m[34m • [39mnull: [90m[1m[31mnull[90m[22m[39m
+",
+  "[34m INFO[39m[34m • [39mundefined: [90m[7m[31mundefined[90m[27m[39m
+",
+  "[34m INFO[39m[34m • [39mnumber: [90m[1m[34m1[90m[22m[39m [90m[1m[34m2[90m[22m[39m [90m[1m[34m3[90m[22m[39m
+",
+  "[34m INFO[39m[34m • [39mregexp: [90m[35m/foo/[90m[39m
+",
+  "[34m INFO[39m[34m • [39marray: [90m[ [33m'foo'[90m, [33m'bar'[90m ][39m
+",
+  "[34m INFO[39m[34m • [39mobject: [90m{ [1m[37mfoo[90m[22m: [33m'bar'[90m }[39m
+",
+]
+`;
+
+exports[`Log buildMessage builds simple messages 1`] = `
+Array [
+  "[90mDEBUG[39m[90m • [39mmessages to debug an application
+",
+  "[34m INFO[39m[34m • [39ma purely informational message
+",
+  "[33m NOTE[39m[33m • [39ma normal but significant condition
+",
+  "[35m WARN[39m[35m • [39mwarning condition
+",
+  "[31mERROR[39m[31m • [39merror condition
+",
+  "[31m[1mCRITI[22m[39m[31m[1m • [22m[39mthe system is in critical condition
+",
+  "[31m[7mALERT[27m[39m[31m • [39maction must be taken immediately
+",
+  "[31m[1m[7mEMERG[27m[22m[39m[31m[1m • [22m[39msystem is unusable
+",
+]
+`;
