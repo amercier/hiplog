@@ -65,6 +65,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsdoc": "^3.7.1",
     "jest": "^23.2.0",
     "jest-extended": "^0.7.2",
     "npm-run-all": "^4.1.3",
@@ -100,6 +101,9 @@
     "env": {
       "browser": false
     },
+    "plugins": [
+      "jsdoc"
+    ],
     "rules": {
       "require-jsdoc": [
         "error",
@@ -135,7 +139,22 @@
             "symbol": "Symbol"
           }
         }
-      ]
+      ],
+      "jsdoc/check-param-names": "error",
+      "jsdoc/check-tag-names": "error",
+      "jsdoc/check-types": "error",
+      "jsdoc/newline-after-description": "error",
+      "jsdoc/no-undefined-types": "error",
+      "jsdoc/require-description-complete-sentence": "error",
+      "jsdoc/require-example": "off",
+      "jsdoc/require-hyphen-before-param-description": "error",
+      "jsdoc/require-param": "error",
+      "jsdoc/require-param-description": "error",
+      "jsdoc/require-param-name": "error",
+      "jsdoc/require-param-type": "error",
+      "jsdoc/require-returns-description": "error",
+      "jsdoc/require-returns-type": "error",
+      "jsdoc/valid-types": "error"
     },
     "overrides": [
       {
