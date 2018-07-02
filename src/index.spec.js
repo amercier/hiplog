@@ -10,6 +10,21 @@ describe('hiplog', () => {
 describe('defaultOptions', () => {
   const { defaultOptions } = hiplog;
   it('has 10 members', () => expect(Object.keys(defaultOptions).length).toBe(10));
+
+  describe('stream', () => {
+    const { stream } = defaultOptions;
+    it('is a function', () => expect(stream).toBeFunction());
+
+    const streamByLevel = level => stream(defaultOptions.levels.indexOf(level));
+    it('returns stdout when level is debug', () => expect(streamByLevel('debug')).toBe(process.stdout));
+    it('returns stdout when level is info', () => expect(streamByLevel('info')).toBe(process.stdout));
+    it('returns stdout when level is notice', () => expect(streamByLevel('notice')).toBe(process.stdout));
+    it('returns stderr when level is warning', () => expect(streamByLevel('warning')).toBe(process.stderr));
+    it('returns stderr when level is error', () => expect(streamByLevel('error')).toBe(process.stderr));
+    it('returns stderr when level is critical', () => expect(streamByLevel('critical')).toBe(process.stderr));
+    it('returns stderr when level is alert', () => expect(streamByLevel('alert')).toBe(process.stderr));
+    it('returns stderr when level is emergency', () => expect(streamByLevel('emergency')).toBe(process.stderr));
+  });
 });
 
 /** @test {Log} */

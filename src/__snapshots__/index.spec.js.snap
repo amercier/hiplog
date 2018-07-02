@@ -26,15 +26,15 @@ exports[`Log buildMessage builds messages with big objects 1`] = `
 exports[`Log buildMessage builds messages with errors 1`] = `
 "[31mERROR[39m[31m • [39m[31mLEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!![39m
         
-        [0m [90m 148 | [39m      let error[33m;[39m[0m
-        [0m [90m 149 | [39m      [36mtry[39m {[0m
-        [0m[31m[1m>[22m[39m[90m 150 | [39m        [36mthrow[39m [36mnew[39m [33mError[39m([32m'LEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!!'[39m)[33m;[39m[0m
+        [0m [90m 163 | [39m      let error[33m;[39m[0m
+        [0m [90m 164 | [39m      [36mtry[39m {[0m
+        [0m[31m[1m>[22m[39m[90m 165 | [39m        [36mthrow[39m [36mnew[39m [33mError[39m([32m'LEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!!'[39m)[33m;[39m[0m
         [0m [90m     | [39m              [31m[1m^[22m[39m[0m
-        [0m [90m 151 | [39m      } [36mcatch[39m (e) {[0m
-        [0m [90m 152 | [39m        error [33m=[39m e[33m;[39m[0m
-        [0m [90m 153 | [39m      }[0m
+        [0m [90m 166 | [39m      } [36mcatch[39m (e) {[0m
+        [0m [90m 167 | [39m        error [33m=[39m e[33m;[39m[0m
+        [0m [90m 168 | [39m      }[0m
         
-          [2mat Object.<anonymous> ([22mhiplog/src/index.spec.js[2m:150:15)[22m
+          [2mat Object.<anonymous> ([22mhiplog/src/index.spec.js[2m:165:15)[22m
         
 "
 `;
