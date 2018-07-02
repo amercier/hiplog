@@ -138,6 +138,33 @@ when `displayTime` is set to `true`;
 
 Message formatter function.
 
+### `fromEnv`
+
+```js
+const hiplog = require('hiplog');
+const log = hiplog.fromEnv();
+```
+
+`fromEnv` is a utility function that will create a new instance of `Log` with
+options taken from environment variables:
+
+- `NODE_ENV`:
+  - `'development'` (default): `displayTime` is disabled,
+  - `'test'`: `displayTime` is disabled, `'level'` is set to `'critical'`,
+  - `'production'`: use default values for each option.
+- `LOG`: sets `level` value.
+- `LOG_LEVEL`: alias for `LOG`.
+- `LOG_TIME`: when set to `true` or `1`, enables `displayTime`.
+- `LOG_TIME_FORMAT`: sets `displayTimeFormat` value.
+
+**Note:** `fromEnv` accepts an `options` parameter that allow overriding these defaults. Example:
+
+```js
+const hiplog = require('hiplog');
+const log = hiplog.fromEnv({ displayTime: false });
+// displayTime will be always `false`, disregarding the value of `LOG_TIME`.
+```
+
 Contributing
 ------------
 

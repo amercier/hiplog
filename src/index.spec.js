@@ -156,3 +156,31 @@ describe('Log', () => {
     });
   });
 });
+
+/** @test {fromEnv} */
+describe('fromEnv', () => {
+  const { fromEnv, defaultOptions } = hiplog;
+
+  it('uses default options when `NODE_ENV` set to "production"', () => {
+    const { options } = fromEnv({}, { NODE_ENV: 'production' });
+    expect(options).toEqual(defaultOptions);
+  });
+
+  it('uses development options when `NODE_ENV` set to "development"', () => {
+    const { options } = fromEnv({}, { NODE_ENV: 'development' });
+    expect(options).toHaveProperty('displayTime', false);
+    expect(options).toMatchSnapshot();
+  });
+
+  it('uses development options when `NODE_ENV` is not set', () => {
+    const { options } = fromEnv({}, {});
+    expect(options).toEqual(fromEnv({}, { NODE_ENV: 'development' }).options);
+  });
+
+  it('uses test options when `NODE_ENV` set to "test"', () => {
+    const { options } = fromEnv({}, { NODE_ENV: 'test' });
+    expect(options).toHaveProperty('level', 'critical');
+    expect(options).toHaveProperty('displayTime', false);
+    expect(options).toMatchSnapshot();
+  });
+});

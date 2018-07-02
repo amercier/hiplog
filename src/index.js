@@ -2,6 +2,7 @@ import {
   red, yellow, magenta, blue, grey,
 } from 'chalk';
 import dateFormat from 'dateformat';
+import defaults from 'lodash.defaults';
 import { separateMessageFromStack, formatStackTrace } from 'jest-message-util';
 import { dirname } from 'path';
 import { stringify } from 'purdy';
@@ -48,7 +49,7 @@ const getStream = (level, { stream }) => (typeof stream === 'function' ? stream(
 
 export class Log {
   constructor(options = {}) {
-    this.options = Object.assign({}, defaultOptions, options);
+    this.options = defaults({}, options, defaultOptions);
     this.options.levels.forEach((name, logLevel) => {
       this[name] = (...parts) => this.write(logLevel, parts);
     });
@@ -88,35 +89,18 @@ export class Log {
   }
 }
 
-export function configFromEnvironment(
-  environment = 'development',
-  aliases = { testing: 'test', staging: 'production' },
-  defaults = {
-    development: { level: 'info', displayTime: false },
-    production: { level: 'info' },
-    test: { level: 'critical', displayTime: false },
-  },
-) {
-  const alias = aliases[environment];
-  if (alias) {
-    return configFromEnvironment(alias, defaults, aliases);
-  }
-  return defaults[environment];
-}
-
-export function fromEnvironment(...args) {
-  return new Log(configFromEnvironment(...args));
-}
-
-export function fromEnvironmentVariables(
-  environment = process.env.NODE_ENV,
-  level = process.env.LOG || process.env.LOG_LEVEL,
-  displayTime = process.env.LOG_TIME,
-) {
-  return new Log(Object.assign(
-    { },
-    configFromEnvironment(environment),
-    level ? { level } : {},
-    { displayTime: ['1', 'true'].indexOf(displayTime) !== -1 },
-  ));
+export function fromEnv(options = {}, env = process.env || {}, environment = env.NODE_ENV || 'development') {
+  const mergedOptions = defaults(
+    options,
+    {
+      level: env.LOG || env.LOG_LEVEL,
+      displayTime: env.LOG_TIME,
+      displayTimeFormat: env.LOG_TIME_FORMAT,
+    },
+    {
+      development: { displayTime: false },
+      test: { level: 'critical', displayTime: false },
+    }[environment],
+  );
+  return new Log(mergedOptions);
 }

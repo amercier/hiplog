@@ -99,3 +99,93 @@ Array [
 ",
 ]
 `;
+
+exports[`fromEnv uses development options when \`NODE_ENV\` set to "development" 1`] = `
+Object {
+  "colors": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "displayTime": false,
+  "displayTimeFormat": "yyyy-mm-dd HH:MM:ss.l",
+  "format": [Function],
+  "inverse": Array [
+    true,
+    true,
+  ],
+  "labels": Array [
+    "EMERG",
+    "ALERT",
+    "CRITI",
+    "ERROR",
+    " WARN",
+    " NOTE",
+    " INFO",
+    "DEBUG",
+  ],
+  "level": "info",
+  "levels": Array [
+    "emergency",
+    "alert",
+    "critical",
+    "error",
+    "warning",
+    "notice",
+    "info",
+    "debug",
+  ],
+  "separator": " • ",
+  "stream": [Function],
+}
+`;
+
+exports[`fromEnv uses test options when \`NODE_ENV\` set to "test" 1`] = `
+Object {
+  "colors": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "displayTime": false,
+  "displayTimeFormat": "yyyy-mm-dd HH:MM:ss.l",
+  "format": [Function],
+  "inverse": Array [
+    true,
+    true,
+  ],
+  "labels": Array [
+    "EMERG",
+    "ALERT",
+    "CRITI",
+    "ERROR",
+    " WARN",
+    " NOTE",
+    " INFO",
+    "DEBUG",
+  ],
+  "level": "critical",
+  "levels": Array [
+    "emergency",
+    "alert",
+    "critical",
+    "error",
+    "warning",
+    "notice",
+    "info",
+    "debug",
+  ],
+  "separator": " • ",
+  "stream": [Function],
+}
+`;
