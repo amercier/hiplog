@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
-- Initial implementation
+- (nothing)
 
-[Unreleased]: https://github.com/amercier/hiplog/compare/v0.1.0-beta.1...HEAD
+[Unreleased]: https://github.com/amercier/hiplog/compare/v0.1.0...HEAD
+
+v0.1.0 - 2018-07-02
+-------------------
+
+### Added
+
+- Initial implementation
+- Unit tests
+- Media files
+- Documentation
