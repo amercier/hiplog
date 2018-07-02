@@ -1,8 +1,8 @@
 <h1 align="center">
   <img
     alt="hiplog"
-    src="https://amercier.github.io/hiplog/dist/header.svg"
-    width="300"
+    src="./media/img/header-512.png"
+    width="256"
   />
 </h1>
 
@@ -26,13 +26,144 @@ Prerequisites: [Node.js](https://nodejs.org/) 6+, **npm** 3+.
 Usage
 -----
 
-### ES5
+```js
+const { Log } = require('hiplog');
+const log = new Log({ level: 'debug' });
+```
 
-    var xxx = require('hiplog').default;
+```js
+log.debug('messages to debug an application');
+log.info('a purely informational message');
+log.notice('a normal but significant condition');
+log.warning('warning condition');
+log.error('error condition');
+log.critical('the system is in critical condition');
+log.alert('action must be taken immediately');
+log.emergency('system is unusable');
+```
 
-### ES2015+
+![Hiplog levels output][doc-img-levels]
 
-    import xxx from 'hiplog';
+### Objects
+
+Objects are automatically stringified using [Purdy]. Small objects (< 200
+characters) are inlined.
+
+```js
+log.info('a small object:', { int: 123, bool: true, str: 'Hello' });
+```
+
+![Hiplog small objects output][doc-img-object-small]
+
+```js
+const circular = {};
+circular.inner = circular;
+
+log.info('a bigger object', {
+  null: null,
+  undefined,
+  integer: 123,
+  boolean: true,
+  string: 'Hello',
+  funtion: function myFunction() {},
+  circular,
+  array: ['one', 'two', 'three', 'four'],
+});
+```
+
+![Hiplog big objects output][doc-img-object-big]
+
+### Errors
+
+Errors are displayed using [jest-message-util] (powered by :sparkles: [babel-code-frame] :sparkles:):
+
+```js
+try {
+  throw new Error('Error example');
+} catch (e) {
+  log.error(e);
+}
+```
+
+![Hiplog errors output][doc-img-error]
+
+### Options
+
+#### `level`
+
+- type: `string`
+- default value: `'info'`
+
+Minimum level to display. All messages below this level will be ignored.
+
+#### `stream`
+
+- type: `Steam | function: integer -> Stream`
+- default value:
+  ```js
+  level => (level <= 4 ? process.stderr : process.stdout)
+  ```
+
+Stream to write to.
+
+#### `displayTime`
+
+- type: `boolean`
+- default value: `false`
+
+Whether to display time information or not. Example:
+
+![Hiplog time output][doc-img-time]
+
+#### `displayTimeFormat`
+
+- type: `string`
+- default value: `'yyyy-mm-dd HH:MM:ss.l'`
+
+Date format to display time in, when `displayTime` is set to `true`. See [dateformat]
+for possible values.
+
+#### `separator`
+
+- type: `string`
+- default value: `' • '`
+
+Separator between message header and body, and also between time and and label,
+when `displayTime` is set to `true`;
+
+#### `format`
+
+- type: `function: string -> string`
+- default value: `hiplog.format`
+
+Message formatter function.
+
+### `fromEnv`
+
+```js
+const hiplog = require('hiplog');
+const log = hiplog.fromEnv();
+```
+
+`fromEnv` is a utility function that will create a new instance of `Log` with
+options taken from environment variables:
+
+- `NODE_ENV`:
+  - `'development'` (default): `displayTime` is disabled,
+  - `'test'`: `displayTime` is disabled, `'level'` is set to `'critical'`,
+  - `'production'`: use default values for each option.
+- `LOG`: sets `level` value.
+- `LOG_LEVEL`: alias for `LOG`.
+- `LOG_TIME`: when set to `true` or `1`, enables `displayTime`.
+- `LOG_TIME_FORMAT`: sets `displayTimeFormat` value.
+
+**Note:** `fromEnv` accepts an `options` parameter that allow overriding these defaults. Example:
+
+```js
+const hiplog = require('hiplog');
+const log = hiplog.fromEnv({ displayTime: false });
+// displayTime will be always `false`, disregarding the value of `LOG_TIME`.
+```
 
 Contributing
 ------------
@@ -48,3 +179,13 @@ License
 
 ---
 <sup>_Created with [npm-package-skeleton](https://github.com/amercier/npm-package-skeleton)._</sup>
+
+[doc-img-levels]: ./media/img/doc/levels.png
+[doc-img-object-small]: ./media/img/doc/object-small.png
+[doc-img-object-big]: ./media/img/doc/object-big.png
+[doc-img-error]: ./media/img/doc/error.png
+[doc-img-time]: ./media/img/doc/time.png
+[Purdy]: https://www.npmjs.com/package/purdy
+[babel-code-frame]: https://new.babeljs.io/docs/en/next/babel-code-frame.html
+[jest-message-util]: https://github.com/facebook/jest/tree/master/packages/jest-message-util
+[dateformat]: https://www.npmjs.com/package/dateformat
