@@ -100,6 +100,43 @@
     "env": {
       "browser": false
     },
+    "rules": {
+      "require-jsdoc": [
+        "error",
+        {
+          "require": {
+            "FunctionDeclaration": true,
+            "MethodDefinition": true,
+            "ClassDeclaration": true,
+            "ArrowFunctionExpression": true,
+            "FunctionExpression": true
+          }
+        }
+      ],
+      "valid-jsdoc": [
+        "error",
+        {
+          "prefer": {
+            "arg": "param",
+            "argument": "param",
+            "constructor": "class",
+            "return": "returns",
+            "virtual": "abstract"
+          },
+          "preferType": {
+            "Boolean": "boolean",
+            "Number": "number",
+            "String": "string",
+            "function": "Function",
+            "object": "Object",
+            "array": "Array",
+            "date": "Date",
+            "regexp": "RegExp",
+            "symbol": "Symbol"
+          }
+        }
+      ]
+    },
     "overrides": [
       {
         "files": [
