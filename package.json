@@ -1,6 +1,6 @@
 {
   "name": "hiplog",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-beta.1",
   "description": "Fancy lightweight logging utility.",
   "license": "ISC",
   "repository": {
