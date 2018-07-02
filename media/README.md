@@ -9,6 +9,7 @@ Install
 Requirements:
 - [Node.js] 8+, with **npm** 5+
 - [Sketch] with [sketchtool] in `PATH`.
+- Font: [Advent Pro]
 
 Install [npm] dependencies:
 
@@ -36,5 +37,6 @@ License
 [Node.js]: https://nodejs.org/
 [Sketch]: https://www.sketchapp.com/
 [sketchtool]: https://developer.sketchapp.com/guides/sketchtool/
+[Advent Pro]: https://fonts.google.com/specimen/Advent+Pro
 [npm]: https://www.npmjs.com/
 [pre-commit]: https://www.npmjs.com/package/pre-commit
