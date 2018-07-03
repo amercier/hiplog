@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+(nothing)
+
+[v1.0.0] - 2018-07-03
+---------------------
+
 ### Added
 
 - API documentation
@@ -31,6 +36,7 @@ v0.1.0 - 2018-07-02
 - Media files
 - Documentation
 
-[Unreleased]: https://github.com/amercier/hiplog/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/amercier/hiplog/compare/v1.0.0...HEAD
+[v1.0.0]: https://github.com/amercier/hiplog/compare/v0.1.0...v1.0.0
 
 [esdoc-integrate-test-plugin]: https://www.npmjs.com/package/esdoc-integrate-test-plugin
