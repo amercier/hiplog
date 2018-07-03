@@ -9,6 +9,31 @@ import { stringify } from 'purdy';
 import stripAnsi from 'strip-ansi';
 
 /**
+ * Function that returns a Stream.
+ *
+ * @typedef {Function} Log~streamFn
+ * @param {number} level - Level number.
+ * @returns {Stream} A Stream
+ */
+
+/**
+ * Options for `Log`.
+ *
+ * @typedef {Object} Log~options
+ * @property {string[]} levels - Log levels.
+ * @property {function[]} colors - Color function for each level.
+ * @property {boolean[]} inverse - Whether to inverse color for each level.
+ * @property {string[]} labels - Label of each level.
+ * @property {string} separator - Separator between time and label, and between header and body
+ * @property {Stream|Log~streamFn} stream - Stream or function that returns a Stream.
+ * @property {boolean} displayTime - Whether to display time.
+ * @property {string} displayTimeFormat - Format to display time in. See [dateformat].
+ * @property {string} level - All log calls below this level will be ignored.
+ *
+ * [dateformat]: https://www.npmjs.com/package/dateformat
+ */
+
+/**
  * Add characters at the begenning of every line of a multi-line string.
  *
  * @param {string} string - Input string.
@@ -60,28 +85,6 @@ function format(value) {
 }
 
 /**
- * @typedef {Object} Log~options
- * @property {string[]} levels - Log levels.
- * @property {function[]} colors - Color function for each level.
- * @property {boolean[]} inverse - Whether to inverse color for each level.
- * @property {string[]} labels - Label of each level.
- * @property {string} separator - Separator between time and label, and between header and body
- * @property {Object|Log~options~streamFn} stream - Stream or function that returns a Stream.
- * @property {boolean} displayTime - Whether to display time.
- * @property {string} displayTimeFormat - Format to display time in. See [dateformat].
- * @property {string} level - All log calls below this level will be ignored.
- *
- * [dateformat]: https://www.npmjs.com/package/dateformat
- */
-
-/**
- * Function that returns a Stream
- * @callback Log~options~streamFn
- * @param {number} level - Level number.
- * @returns Stream Returns a Stream
- */
-
-/**
  * Default configuration
  * @type {Log~options}
  */
@@ -109,6 +112,9 @@ const applyOption = (option, ...args) => (typeof option === 'function' ? option(
 
 /**
  * Fancy lightweight logging utility.
+ *
+ * @class
+
  */
 export class Log {
   /**
@@ -117,9 +123,19 @@ export class Log {
    * @param {Log~options} [options={}] - Options.
    */
   constructor(options = {}) {
+    /**
+     * @var {Log~options} options - Logger options.
+     */
     this.options = defaults({}, options, defaultOptions);
-    this.options.levels.forEach((name, logLevel) => {
-      this[name] = (...parts) => this.write(logLevel, parts);
+
+    this.options.levels.forEach((level, logLevel) => {
+      /**
+       * Logging method for each level of `options.levels`.
+       *
+       * @param {...*} parts - Any value: `string`, `Object`, `Error`, etc.
+       * @returns {undefined} Nothing.
+       */
+      this[level] = (...parts) => this.write(logLevel, parts);
     });
   }
 
