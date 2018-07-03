@@ -64,6 +64,7 @@
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-jsdoc-strict": "^1.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsdoc": "^3.7.1",
     "jest": "^23.2.0",
@@ -97,64 +98,15 @@
     ]
   },
   "eslintConfig": {
-    "extends": "airbnb-base",
-    "env": {
-      "browser": false
-    },
-    "plugins": [
-      "jsdoc"
+    "extends": [
+      "airbnb-base",
+      "jsdoc-strict"
     ],
     "rules": {
-      "require-jsdoc": [
-        "error",
-        {
-          "require": {
-            "FunctionDeclaration": true,
-            "MethodDefinition": true,
-            "ClassDeclaration": true,
-            "ArrowFunctionExpression": true,
-            "FunctionExpression": true
-          }
-        }
-      ],
-      "valid-jsdoc": [
-        "error",
-        {
-          "prefer": {
-            "arg": "param",
-            "argument": "param",
-            "constructor": "class",
-            "return": "returns",
-            "virtual": "abstract"
-          },
-          "preferType": {
-            "Boolean": "boolean",
-            "Number": "number",
-            "String": "string",
-            "function": "Function",
-            "object": "Object",
-            "array": "Array",
-            "date": "Date",
-            "regexp": "RegExp",
-            "symbol": "Symbol"
-          }
-        }
-      ],
-      "jsdoc/check-param-names": "error",
-      "jsdoc/check-tag-names": "error",
-      "jsdoc/check-types": "error",
-      "jsdoc/newline-after-description": "error",
-      "jsdoc/no-undefined-types": "error",
-      "jsdoc/require-description-complete-sentence": "error",
-      "jsdoc/require-example": "off",
-      "jsdoc/require-hyphen-before-param-description": "error",
-      "jsdoc/require-param": "error",
-      "jsdoc/require-param-description": "error",
-      "jsdoc/require-param-name": "error",
-      "jsdoc/require-param-type": "error",
-      "jsdoc/require-returns-description": "error",
-      "jsdoc/require-returns-type": "error",
-      "jsdoc/valid-types": "error"
+      "jsdoc/require-example": "off"
+    },
+    "env": {
+      "browser": false
     },
     "overrides": [
       {
