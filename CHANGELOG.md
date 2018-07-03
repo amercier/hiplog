@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Added [esdoc-integrate-test-plugin] ESDoc plugin
 - Tweaked logo
 
 v0.1.0 - 2018-07-02
@@ -27,3 +28,5 @@ v0.1.0 - 2018-07-02
 - Documentation
 
 [Unreleased]: https://github.com/amercier/hiplog/compare/v0.1.0...HEAD
+
+[esdoc-integrate-test-plugin]: https://www.npmjs.com/package/esdoc-integrate-test-plugin
