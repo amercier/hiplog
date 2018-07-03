@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added [esdoc-integrate-test-plugin] ESDoc plugin
 - Tweaked logo
 
+### Fixed
+
+- Fixed ESDoc not being updated correctly after build success
+
 v0.1.0 - 2018-07-02
 -------------------
 

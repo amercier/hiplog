@@ -2,9 +2,11 @@ language: node_js
 matrix:
   include:
     - node_js: node # Current
-      env: BUILD_DOCS=true REPORT_COVERAGE=true
     - node_js: --lts # LTS
-      env: NPM_DEPLOY=true
+      env:
+        - BUILD_DOCS=true
+        - REPORT_COVERAGE=true
+        - NPM_DEPLOY=true
     - node_js: 6 # Minimum required
 install:
   - npm install --loglevel http # Prevent timeouts for inactivity
@@ -12,10 +14,13 @@ before_script:
   - npm run lint
 script:
   - FORCE_COLOR=1 npm test -- --coverage # TODO find a cleaner way to enable Chalk colors
-  - '[[ "$BUILD_DOCS" != true ]] || npm run doc' # Ensures ESDoc generation doesn't fail
-  - '[[ "$REPORT_COVERAGE" != true ]] || codecov'
+  - '[ "$BUILD_DOCS" != true ] || npm run doc' # Ensures ESDoc generation doesn't fail
+  - '[ "$REPORT_COVERAGE" != true ] || codecov'
 after_success:
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash <(curl https://gist.githubusercontent.com/amercier/9d41002c79ac8e9fbd36bc1815d934b1/raw/) amercier/hiplog; fi'
+  - |
+    if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$BUILD_DOCS" = "true" ]; then
+      bash <(curl -s https://gist.githubusercontent.com/amercier/9d41002c79ac8e9fbd36bc1815d934b1/raw/) amercier/hiplog
+    fi
 deploy:
   provider: npm
   email: pro.alexandre.mercier@gmail.com
