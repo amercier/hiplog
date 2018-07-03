@@ -56,7 +56,7 @@ log.info('a bigger object', {
   integer: 123,
   boolean: true,
   string: 'Hello',
-  funtion: function myFunction() {},
+  funtion: function myFunction() {}, // eslint-disable-line require-jsdoc
   circular,
   array: ['one', 'two', 'three', 'four'],
 });

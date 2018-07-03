@@ -15,6 +15,12 @@ describe('defaultOptions', () => {
     const { stream } = defaultOptions;
     it('is a function', () => expect(stream).toBeFunction());
 
+    /**
+     * Get the stream for a given level name.
+     *
+     * @param {string} level - Level name.
+     * @returns {Object} Stream returned by `stream(levels[level])`.
+     */
     const streamByLevel = level => stream(defaultOptions.levels.indexOf(level));
     it('returns stdout when level is debug', () => expect(streamByLevel('debug')).toBe(process.stdout));
     it('returns stdout when level is info', () => expect(streamByLevel('info')).toBe(process.stdout));
@@ -150,7 +156,7 @@ describe('Log', () => {
         integer: 123,
         boolean: true,
         string: 'Hello',
-        funtion: function myFunction() {},
+        funtion: function myFunction() {}, // eslint-disable-line require-jsdoc
         circular,
         array: ['one', 'two', 'three', 'four'],
       };
