@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. The format 
 
 (nothing)
 
+[v1.0.2] - 2018-07-05
+---------------------
+
 ### Fixed
 
 - Fixed `fromEnv` setting `displayTime` to `true` whenever `LOG_TIME` was set, disregarding actual value.
@@ -51,6 +54,7 @@ v0.1.0 - 2018-07-02
 [Semantic Versioning]: (https://semver.org/spec/v2.0.0.html
 [esdoc-integrate-test-plugin]: https://www.npmjs.com/package/esdoc-integrate-test-plugin
 
-[Unreleased]: https://github.com/amercier/hiplog/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/amercier/hiplog/compare/v1.0.2...HEAD
+[v1.0.2]: https://github.com/amercier/hiplog/compare/v1.0.1...v1.0.2
 [v1.0.1]: https://github.com/amercier/hiplog/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/amercier/hiplog/compare/v0.1.0...v1.0.0
