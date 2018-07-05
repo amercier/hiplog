@@ -4,6 +4,8 @@ root = true
 # all files and we set exceptions for all files with an extension
 
 [*]
+max_line_length = 100
+
 indent_style = space
 indent_size = 2
 
