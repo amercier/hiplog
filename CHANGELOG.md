@@ -1,16 +1,20 @@
 Changelog
 =========
 
-All notable changes to this project will be documented in this file.
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to this project will be documented in this file. The format is based on
+[Keep a Changelog] and this project adheres to [Semantic Versioning].
 
 [Unreleased]
 ------------
 
+(nothing)
+
+[v1.0.1] - 2018-07-05
+---------------------
+
 ### Fixed
 
-- Fixed `displayTime` being set to the wrong value by default. 
+- Fixed `displayTime` being set to the wrong value by default.
 
 [v1.0.0] - 2018-07-03
 ---------------------
@@ -38,7 +42,10 @@ v0.1.0 - 2018-07-02
 - Media files
 - Documentation
 
-[Unreleased]: https://github.com/amercier/hiplog/compare/v1.0.0...HEAD
-[v1.0.0]: https://github.com/amercier/hiplog/compare/v0.1.0...v1.0.0
-
+[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
+[Semantic Versioning]: (https://semver.org/spec/v2.0.0.html
 [esdoc-integrate-test-plugin]: https://www.npmjs.com/package/esdoc-integrate-test-plugin
+
+[Unreleased]: https://github.com/amercier/hiplog/compare/v1.0.1...HEAD
+[v1.0.1]: https://github.com/amercier/hiplog/compare/v1.0.0...v1.0.1
+[v1.0.0]: https://github.com/amercier/hiplog/compare/v0.1.0...v1.0.0
