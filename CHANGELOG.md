@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file. The format 
 
 (nothing)
 
+### Fixed
+
+- Fixed `demo.js` crashing since v1.x API changes.
+
 [v1.0.1] - 2018-07-05
 ---------------------
 

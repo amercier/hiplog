@@ -14,9 +14,9 @@
  * [hiplog]: https://www.npmjs.com/package/hiplog
  */
 
-const { fromEnvironmentVariables } = require('.'); // eslint-disable-line import/no-unresolved
+const { fromEnv } = require('.'); // eslint-disable-line import/no-unresolved
 
-const log = fromEnvironmentVariables();
+const log = fromEnv();
 
 process.stdout.write('\n');
 

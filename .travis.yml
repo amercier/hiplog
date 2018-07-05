@@ -12,8 +12,10 @@ install:
   - npm install --loglevel http # Prevent timeouts for inactivity
 before_script:
   - npm run lint
+  - npm run build
 script:
   - FORCE_COLOR=1 npm test -- --coverage # TODO find a cleaner way to enable Chalk colors
+  - ./demo.js
   - '[ "$BUILD_DOCS" != true ] || npm run doc' # Ensures ESDoc generation doesn't fail
   - '[ "$REPORT_COVERAGE" != true ] || codecov'
 after_success:
