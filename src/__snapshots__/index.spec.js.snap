@@ -26,15 +26,15 @@ exports[`Log buildMessage builds messages with big objects 1`] = `
 exports[`Log buildMessage builds messages with errors 1`] = `
 "[31mERROR[39m[31m • [39m[31mLEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!![39m
         
-        [0m [90m 169 | [39m      let error[33m;[39m[0m
-        [0m [90m 170 | [39m      [36mtry[39m {[0m
-        [0m[31m[1m>[22m[39m[90m 171 | [39m        [36mthrow[39m [36mnew[39m [33mError[39m([32m'LEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!!'[39m)[33m;[39m[0m
+        [0m [90m 170 | [39m      let error[33m;[39m[0m
+        [0m [90m 171 | [39m      [36mtry[39m {[0m
+        [0m[31m[1m>[22m[39m[90m 172 | [39m        [36mthrow[39m [36mnew[39m [33mError[39m([32m'LEROOOOOOOOOOOY JENKINS!!!!!!!!!!!!!!!!!!!!!!!!!'[39m)[33m;[39m[0m
         [0m [90m     | [39m              [31m[1m^[22m[39m[0m
-        [0m [90m 172 | [39m      } [36mcatch[39m (e) {[0m
-        [0m [90m 173 | [39m        error [33m=[39m e[33m;[39m[0m
-        [0m [90m 174 | [39m      }[0m
+        [0m [90m 173 | [39m      } [36mcatch[39m (e) {[0m
+        [0m [90m 174 | [39m        error [33m=[39m e[33m;[39m[0m
+        [0m [90m 175 | [39m      }[0m
         
-          [2mat Object.<anonymous> ([22mhiplog/src/index.spec.js[2m:171:15)[22m
+          [2mat Object.<anonymous> ([22mhiplog/src/index.spec.js[2m:172:15)[22m
         
 "
 `;
@@ -98,6 +98,51 @@ Array [
   "[31m[1m[7mEMERG[27m[22m[39m[31m[1m • [22m[39msystem is unusable
 ",
 ]
+`;
+
+exports[`defaultOptions has correct values 1`] = `
+Object {
+  "colors": Array [
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+    [Function],
+  ],
+  "displayTime": false,
+  "displayTimeFormat": "yyyy-mm-dd HH:MM:ss.l",
+  "format": [Function],
+  "inverse": Array [
+    true,
+    true,
+  ],
+  "labels": Array [
+    "EMERG",
+    "ALERT",
+    "CRITI",
+    "ERROR",
+    " WARN",
+    " NOTE",
+    " INFO",
+    "DEBUG",
+  ],
+  "level": "info",
+  "levels": Array [
+    "emergency",
+    "alert",
+    "critical",
+    "error",
+    "warning",
+    "notice",
+    "info",
+    "debug",
+  ],
+  "separator": " • ",
+  "stream": [Function],
+}
 `;
 
 exports[`fromEnv uses development options when \`NODE_ENV\` set to "development" 1`] = `

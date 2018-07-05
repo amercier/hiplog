@@ -10,6 +10,7 @@ describe('hiplog', () => {
 describe('defaultOptions', () => {
   const { defaultOptions } = hiplog;
   it('has 10 members', () => expect(Object.keys(defaultOptions).length).toBe(10));
+  it('has correct values', () => expect(defaultOptions).toMatchSnapshot());
 
   describe('stream', () => {
     const { stream } = defaultOptions;

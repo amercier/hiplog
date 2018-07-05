@@ -96,7 +96,7 @@ export const defaultOptions = {
   separator: ' • ',
   stream: level => (level <= 4 ? process.stderr : process.stdout),
   format,
-  displayTime: true,
+  displayTime: false,
   displayTimeFormat: 'yyyy-mm-dd HH:MM:ss.l',
   level: 'info',
 };
