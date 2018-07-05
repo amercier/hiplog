@@ -11,7 +11,6 @@
 [![Latest Stable Version](https://img.shields.io/npm/v/hiplog.svg)](https://www.npmjs.com/package/hiplog)
 [![Build Status](https://travis-ci.org/amercier/hiplog.svg?branch=master)](https://travis-ci.org/amercier/hiplog)
 [![NPM Downloads](https://img.shields.io/npm/dm/hiplog.svg)](https://www.npmjs.com/package/hiplog)
-
 [![dependencies Status](https://david-dm.org/amercier/hiplog/status.svg)](https://david-dm.org/amercier/hiplog)
 [![Test Coverage](https://img.shields.io/codecov/c/github/amercier/hiplog/master.svg)](https://codecov.io/github/amercier/hiplog?branch=master)
 [![API Documentation](https://doc.esdoc.org/github.com/amercier/hiplog/badge.svg)](https://doc.esdoc.org/github.com/amercier/hiplog/)
