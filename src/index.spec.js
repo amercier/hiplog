@@ -205,4 +205,12 @@ describe('fromEnv', () => {
     expect(options).toHaveProperty('displayTime', false);
     expect(options).toMatchSnapshot();
   });
+
+  describe('LOG_TIME', () => {
+    it('sets displayTime to default value when not set', () => expect(fromEnv({}, {}).options).toHaveProperty('displayTime', defaultOptions.displayTime));
+    it('sets displayTime to true when set to 1', () => expect(fromEnv({}, { LOG_TIME: '1' }).options).toHaveProperty('displayTime', true));
+    it('sets displayTime to true when set to true', () => expect(fromEnv({}, { LOG_TIME: 'true' }).options).toHaveProperty('displayTime', true));
+    it('sets displayTime to false when set to 0', () => expect(fromEnv({}, { LOG_TIME: '0' }).options).toHaveProperty('displayTime', false));
+    it('sets displayTime to false when set to false', () => expect(fromEnv({}, { LOG_TIME: 'false' }).options).toHaveProperty('displayTime', false));
+  });
 });

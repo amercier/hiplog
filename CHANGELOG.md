@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ### Fixed
 
+- Fixed `fromEnv` setting `displayTime` to `true` whenever `LOG_TIME` was set, disregarding actual value.
 - Fixed `demo.js` crashing since v1.x API changes.
 
 [v1.0.1] - 2018-07-05

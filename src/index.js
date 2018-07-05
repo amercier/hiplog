@@ -227,7 +227,7 @@ export function fromEnv(options = {}, env = process.env || {}, environment = env
     options,
     {
       level: env.LOG || env.LOG_LEVEL,
-      displayTime: env.LOG_TIME,
+      displayTime: env.LOG_TIME && ['1', 'true'].indexOf(env.LOG_TIME) !== -1,
       displayTimeFormat: env.LOG_TIME_FORMAT,
     },
     {
