@@ -121,6 +121,7 @@ export class Log {
    * Creates an instance of `Log`.
    *
    * @param {Log~options} [options={}] - Options.
+   * @returns {Log} A new instance of Log.
    */
   constructor(options = {}) {
     /**
@@ -141,6 +142,7 @@ export class Log {
 
   /**
    * @property {number} level - Integer value of `this.options.level`.
+   * @returns {number} The level.
    */
   get level() {
     return this.options.levels.indexOf(this.options.level);
