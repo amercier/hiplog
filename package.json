@@ -51,7 +51,7 @@
     "lodash.defaults": "^4.2.0",
     "npm": "^6.1.0",
     "purdy": "^3.1.1",
-    "strip-ansi": "^5.0.0"
+    "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
