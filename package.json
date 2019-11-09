@@ -44,7 +44,7 @@
     "object"
   ],
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^3.0.0",
     "dateformat": "^3.0.3",
     "install": "^0.12.1",
     "jest-message-util": "^24.0.0",
