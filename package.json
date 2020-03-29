@@ -47,7 +47,7 @@
     "chalk": "^2.4.1",
     "dateformat": "^3.0.3",
     "install": "^0.12.1",
-    "jest-message-util": "^24.0.0",
+    "jest-message-util": "^25.2.4",
     "lodash.defaults": "^4.2.0",
     "npm": "^6.1.0",
     "purdy": "^3.1.1",
